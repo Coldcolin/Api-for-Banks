@@ -62,7 +62,7 @@ const deleteBank = async (req, res) => {
         if(!bankId){
             res.status(404).json({message: `This id: ${bankId}is not found.`})
         }
-        const deleteBank = await bankModel.findByIdAndDelete(bankId);
+        const deletedBank = await bankModel.findByIdAndDelete(bankId);
         res.status(200).json({message: "bank deleted successfully."})
     }catch(error){
         res.status(404).json({message: error.message})
