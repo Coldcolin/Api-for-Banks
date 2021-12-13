@@ -12,6 +12,9 @@ mongoose.connect(url, {useUnifiedTopology: true, useNewUrlParser: true})
     console.log("successfully connected to the database")
 })
 
+app.get("/", (req, res)=>{
+    res.send("testing route")
+})
 app.use("/api", router)
 
 app.listen(port, ()=>{
